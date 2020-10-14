@@ -11,6 +11,8 @@
   <link rel="shortcut icon" href="https://fkun.tech/favicon.ico">
   <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
   <div class="panel-main" style="overflow: hidden;">
     <div class="panel-main__inner panel-inverted">
       <div class="panel-main__content">
-        <a href="https://blog.fkun.tech/" title="访问博客"><img src="https://fkun.tech/images/avatar.png" width="150"
+        <a href="https://blog.fkun.tech/" title="visitblog"><img src="https://fkun.tech/images/avatar.png" width="150"
             alt="LOGO" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="https://blog.fkun.tech/" title="FkunのBlog">FKUN</a></h1>
         <hr class="panel-cover__divider">
@@ -45,26 +47,33 @@
         <p class="from" style="font-size:50%"></p>
         <hr class="panel-cover__divider">
         <!-- <p class="panel-cover__description" style="font-size:80%">选择菜单继续探索</p> -->
+
+
         <p class="footer">Copyright © 2017-2020 &nbsp;<a href="https://fkun.tech/" target="_blank">FKUN</a> All Rights
           Reserved.</p>
+
+        <div class="footer">
+          <a href="#" id="enBtn">English</a>
+          <a href="#" id="zhBtn">简体中文</a>
+          <a href="#" id="jpBtn">日本語</a>
+          <a href="#" id="deBtn">Deutsch</a>
+        </div>
 
         <div class="navigation-wrapper">
           <div>
             <nav class="cover-navigation cover-navigation--primary">
               <ul class="navigation">
-                <li class="navigation__item"><a href="https://blog.fkun.tech/" title="F君の博客">F君の博客</a></li>
-                <li class="navigation__item"><a href="https://space.bilibili.com/8515147" title="B站 @F_KUN">哔哩哔哩</a>
-                </li>
-                <li class="navigation__item"><a href="https://bill.fkun.tech/" title="Ver2.1.1">记账</a></li>
-                <li class="navigation__item"><a href="https://bbs.fkun.tech/" title="Ver2.3.0">论坛</a></li>
-                <li class="navigation__item"><a href="https://cloud.fkun.tech/" title="Ver1.1.0">云盘</a></li>
-                <li class="navigation__item"><a href="http://kindle.fkun.tech/" title="Ver1.0.1">Kindle RSS</a></li>
+                <li class="navigation__item"><a lang href="https://blog.fkun.tech/" title="Fkun's Blog">F君の博客</a></li>
+                <li class="navigation__item"><a lang href="https://space.bilibili.com/8515147"title="Bilibili @F_KUN">bilibili</a></li>
+                <li class="navigation__item"><a lang href="https://bill.fkun.tech/" title="Ver2.1.1">bookkeep</a></li>
+                <li class="navigation__item"><a lang href="https://bbs.fkun.tech/" title="Ver2.3.0">BBS</a></li>
+                <li class="navigation__item"><a lang href="https://cloud.fkun.tech/" title="Ver1.1.0">cloud</a></li>
+                <li class="navigation__item"><a lang href="http://kindle.fkun.tech/" title="Ver1.0.1">kindle</a></li>
                 <!--   <li class="navigation__item"><a href="https://photo.fkun.tech/" title="photos">F君の摄影作品</a></li>  -->
               </ul>
             </nav>
           </div>
           <div>
-
             <div>
 
               <nav class="cover-navigation navigation--social">
@@ -133,7 +142,7 @@
       var data = JSON.parse(xhr.responseText);
       var hitokoto = document.getElementById('hitokoto');
       hitokoto.innerText = data.hitokoto;
-      from.innerText = "Source: " + data.from; //可自定义输出格式
+      from.innerText = __tr("source") + " " + data.from; //可自定义输出格式
     }
   }
   xhr.send();
@@ -147,6 +156,5 @@
 
   }, { passive: false });//passive 参数不能省略，用来兼容ios和android
 </script>
-
 
 </html>
