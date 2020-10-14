@@ -1107,5 +1107,6 @@ i {
   opacity: 1;
 }
 
-.en, .de, .jp, .zh{ display:none; } /* hide all elements with a language class */
-.en:lang(en), .de:lang(de), .jp:lang(jp), .zh:lang(zh) { display:block; } /* show those elements that match their language class */
+.lan{
+  color: #5ba4e5;
+}

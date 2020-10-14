@@ -10,9 +10,20 @@
   <link rel="icon" href="https://fkun.tech/favicon.ico">
   <link rel="shortcut icon" href="https://fkun.tech/favicon.ico">
   <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
   <script src="js/script.js"></script>
+  <script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
+  <script type="text/javascript" src='js/main.js'></script>
+  <script src='js/bg.js'></script>
+
+  <script>
+    document.addEventListener('touchmove', function (event) { 　　 //监听滚动事件
+      if (flag == 1) {
+        event.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+      }
+    }, { passive: false });//passive 参数不能省略，用来兼容ios和android
+  </script>
 </head>
 
 <body>
@@ -22,6 +33,7 @@
   </span>
   <section>
     <ul class="cb-slideshow" style="list-style-type: none;">
+      <!-- 图片灯箱预留位置 -->
       <li><span></span></li>
       <li><span></span></li>
       <li><span></span></li>
@@ -43,28 +55,32 @@
             alt="LOGO" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="https://blog.fkun.tech/" title="FkunのBlog">FKUN</a></h1>
         <hr class="panel-cover__divider">
-        <p id="hitokoto" style="font-size:1rem;">获取中...</p>
+        <p id="hitokoto" style="font-size:1rem;">获取一言中...</p>
         <p class="from" style="font-size:50%"></p>
+        <script>
+          var hitokoto = document.querySelector('.hitokoto');
+          var from = document.querySelector('.from');
+          var xhr = new XMLHttpRequest();
+          xhr.open('get', 'https://v1.hitokoto.cn');
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              var data = JSON.parse(xhr.responseText);
+              var hitokoto = document.getElementById('hitokoto');
+              hitokoto.innerText = data.hitokoto;
+              from.innerText = __tr("source") + " " + data.from; //可自定义输出格式
+            }
+          }
+          xhr.send();
+        </script>
         <hr class="panel-cover__divider">
-        <!-- <p class="panel-cover__description" style="font-size:80%">选择菜单继续探索</p> -->
-
-
-        <p class="footer">Copyright © 2017-2020 &nbsp;<a href="https://fkun.tech/" target="_blank">FKUN</a> All Rights
-          Reserved.</p>
-
-        <div class="footer">
-          <a href="#" id="enBtn">English</a>
-          <a href="#" id="zhBtn">简体中文</a>
-          <a href="#" id="jpBtn">日本語</a>
-          <a href="#" id="deBtn">Deutsch</a>
-        </div>
 
         <div class="navigation-wrapper">
           <div>
             <nav class="cover-navigation cover-navigation--primary">
               <ul class="navigation">
                 <li class="navigation__item"><a lang href="https://blog.fkun.tech/" title="Fkun's Blog">F君の博客</a></li>
-                <li class="navigation__item"><a lang href="https://space.bilibili.com/8515147"title="Bilibili @F_KUN">bilibili</a></li>
+                <li class="navigation__item"><a lang href="https://space.bilibili.com/8515147"
+                    title="Bilibili @F_KUN">bilibili</a></li>
                 <li class="navigation__item"><a lang href="https://bill.fkun.tech/" title="Ver2.1.1">bookkeep</a></li>
                 <li class="navigation__item"><a lang href="https://bbs.fkun.tech/" title="Ver2.3.0">BBS</a></li>
                 <li class="navigation__item"><a lang href="https://cloud.fkun.tech/" title="Ver1.1.0">cloud</a></li>
@@ -122,39 +138,22 @@
           </div>
         </div>
       </div>
+      <p class="footer">
+        <a href="#" id="enBtn">English</a>
+        <a href="#" id="zhBtn">简体中文</a>
+        <a href="#" id="jpBtn">日本語</a>
+        <a href="#" id="deBtn">Deutsch</a>
+        <br><br>
+        Copyright © 2017-2020
+        <a href="https://fkun.tech/" target="_blank">FKUN </a> All Rights Reserved.
+      </p>
 
     </div>
     <div class="panel-cover--overlay cover-slate"></div>
-    <script type="text/javascript" src='jquery-3.4.1.min.js'></script>
-    <script type="text/javascript" src='main.js'></script>
-    <script src='bg.js'></script>
+
   </div>
 
 </body>
 
-<script>
-  var hitokoto = document.querySelector('.hitokoto');
-  var from = document.querySelector('.from');
-  var xhr = new XMLHttpRequest();
-  xhr.open('get', 'https://v1.hitokoto.cn');
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      var data = JSON.parse(xhr.responseText);
-      var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText = data.hitokoto;
-      from.innerText = __tr("source") + " " + data.from; //可自定义输出格式
-    }
-  }
-  xhr.send();
-
-  document.addEventListener('touchmove', function (event) { 　　 //监听滚动事件
-
-    if (flag == 1) {
-      event.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
-
-    }
-
-  }, { passive: false });//passive 参数不能省略，用来兼容ios和android
-</script>
 
 </html>
