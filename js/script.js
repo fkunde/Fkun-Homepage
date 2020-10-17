@@ -89,7 +89,7 @@ function __tr(src) {
 }
 
 function loadDict() {
-  var lang = (getCookieVal("lang") || "en");
+  var lang = (getCookieVal("lang") || "zh");
   $.ajax({
     async: false,
     type: "GET",
