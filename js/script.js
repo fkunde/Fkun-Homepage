@@ -118,3 +118,24 @@ function registerWords() {
     }
   });
 }
+
+
+document.addEventListener('touchmove', function (event) { 　　 //监听滚动事件
+  if (flag == 1) {
+    event.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+  }
+}, { passive: false });//passive 参数不能省略，用来兼容ios和android
+
+var hitokoto = document.querySelector('.hitokoto');
+          var from = document.querySelector('.from');
+          var xhr = new XMLHttpRequest();
+          xhr.open('get', 'https://v1.hitokoto.cn');
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              var data = JSON.parse(xhr.responseText);
+              var hitokoto = document.getElementById('hitokoto');
+              hitokoto.innerText = data.hitokoto;
+              from.innerText = __tr("source") + " " + data.from; //可自定义输出格式
+            }
+          }
+          xhr.send();
