@@ -41,7 +41,7 @@ var onImageLoad = function(){
 
 var backgroundImage = new Image();
 backgroundImage.onload = onImageLoad;
-var wait = 500;
+var wait = 0;
 
 changeImage();
 })
