@@ -713,6 +713,23 @@ hr {
   background: none;
 }
 
+.btn,
+.navigation__item a {
+  padding: 10px 20px;
+  border: 1px solid #df9c81;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  text-shadow: none;
+  color: #df9c81;
+  -webkit-font-smoothing: antialiased;
+}
+.btn:hover,
+.navigation__item a:hover {
+  color: #d06c44;
+  border-color: #d06c44;
+}
 
 .btn-border-small {
   border: 1px solid #df9c81;
