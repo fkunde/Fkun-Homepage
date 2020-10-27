@@ -50,3 +50,17 @@ $(document).ready(function() {
     $('.btn-mobile-menu__icon').toggleClass('fa fa-list fa fa-angle-up animated fadeIn');
   });
 });
+
+var hitokoto = document.querySelector('.hitokoto');
+  var from = document.querySelector('.from');
+  var xhr = new XMLHttpRequest();
+  xhr.open('get', 'https://v1.hitokoto.cn');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      var data = JSON.parse(xhr.responseText);
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto;
+      from.innerText = "Source: " + data.from; //可自定义输出格式
+    }
+  }
+  xhr.send();
