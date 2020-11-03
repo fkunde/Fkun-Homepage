@@ -57,12 +57,14 @@
           <span id="words" style="font-size:1rem;"></span><span id="cursor">|</span>
         </div>
         <script>
-          if (fkunhitokoto() !== null) {
+          var api = Array(fkunhitokoto());
+          if (api.length !==0) {
             var strings = new Array(fkunhitokoto());
             var typingSpeed = 60;
             var deleteSpeed = 40;
-            var isLoop = false;
+            var isLoop = true;
             var isPlaceholder = false;
+            var waitTime = 100000;
             document.write("</br>");
           } else {
             document.write(fkunhitokoto());
