@@ -13,12 +13,15 @@
   <link rel="shortcut icon" href="https://fkun.tech/favicon.ico">
   <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/typing.css">
   <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/typing.js"></script>
   <script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
   <script type="text/javascript" src='js/main.js'></script>
   <script src='js/bg.js'></script>
   <script type="text/javascript" src="https://api.fkun.tech/hitokoto/?format=js&charset=utf-8"></script>
+
 </head>
 
 <body>
@@ -50,11 +53,26 @@
             width="150" alt="LOGO" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="https://blog.fkun.tech/" title="FkunのBlog">FKUN</a></h1>
         <hr class="panel-cover__divider">
-        <p id="fkunhitokoto" style="font-size:1rem;">
-          <script>fkunhitokoto()</script>
-        </p>
-        <p id="fkunhitokotosource" style="font-size:50%"><a lang>source</a>
-          <script>fkunhitokotosource()</script>
+        <div id="typing">
+          <span id="words" style="font-size:1rem;"></span><span id="cursor">|</span>
+        </div>
+        <script>
+          if (fkunhitokoto() !== null) {
+            var strings = new Array(fkunhitokoto());
+            var typingSpeed = 60;
+            var deleteSpeed = 40;
+            var isLoop = false;
+            var isPlaceholder = false;
+            document.write("</br>");
+          } else {
+            document.write(fkunhitokoto());
+            document.write("</br>");
+            document.write("</br>");
+            document.write("</br>");
+          }
+        </script>
+        <p style="font-size:50%"><a lang>source</a>
+          <script>document.write(fkunhitokotosource())</script>
         </p>
         <hr class="panel-cover__divider">
         <div class="navigation-wrapper">
@@ -63,8 +81,10 @@
               <ul class="navigation">
                 <li class="navigation__item"><a lang href="https://blog.fkun.tech/" title="Fkun's Blog">Blog</a>
                 </li>
-                <li class="navigation__item"><a lang href="https://space.bilibili.com/8515147" title="Bilibili @F_KUN">Videos</a></li>
-                <li class="navigation__item"><a lang href="https://bill.fkun.tech/" title="Ver2.5.1">BookKeeping</a></li>
+                <li class="navigation__item"><a lang href="https://space.bilibili.com/8515147"
+                    title="Bilibili @F_KUN">Videos</a></li>
+                <li class="navigation__item"><a lang href="https://bill.fkun.tech/" title="Ver2.5.1">BookKeeping</a>
+                </li>
                 <li class="navigation__item"><a lang href="https://bbs.fkun.tech/" title="Ver2.3.0">BBS</a></li>
                 <li class="navigation__item"><a lang href="https://cloud.fkun.tech/" title="Ver1.1.0">Cloud</a></li>
                 <li class="navigation__item"><a lang href="http://lab.fkun.tech/" title="Ver1.0.1">Lab</a></li>
@@ -141,6 +161,7 @@
     </div>
     <div class="panel-cover--overlay cover-slate"></div>
   </div>
+
 </body>
 
 </html>
