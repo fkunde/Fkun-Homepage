@@ -141,7 +141,6 @@ q:after {
 
 body {
   width: 100%;
-  *zoom: 1;
 }
 body:before,
 body:after {
