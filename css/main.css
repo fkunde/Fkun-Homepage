@@ -114,6 +114,7 @@ body {
   background: #000;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   line-height: 1;
+  overflow: hidden;
 }
 
 ol,
