@@ -918,7 +918,7 @@ i {
 
 @media all and (max-width: 1100px) {
   .panel-cover__logo {
-    /* width: 70px; */
+    width: auto;
   }
 
   .panel-title {
