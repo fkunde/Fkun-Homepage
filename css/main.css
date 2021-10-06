@@ -1099,6 +1099,7 @@ i {
   left: 0px;
   color: transparent;
   background: center center no-repeat;
+  background-size: cover;
   opacity: 0;
   z-index: -2;
   transition: opacity 2s linear;
