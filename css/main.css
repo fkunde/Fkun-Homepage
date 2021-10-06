@@ -918,7 +918,7 @@ i {
 
 @media all and (max-width: 1100px) {
   .panel-cover__logo {
-    width: auto;
+    width: 70px;
   }
 
   .panel-title {
@@ -1101,14 +1101,12 @@ i {
   background: center center no-repeat;
   opacity: 0;
   z-index: -2;
-  filter: blur(15px);
   transition: opacity 2s linear;
-  transition: filter 1s linear;
 }
 .cb-slideshow li span.active {
   opacity: 1;
-  filter: blur(0);
 }
+
 .lan{
   color: #5ba4e5;
 }
