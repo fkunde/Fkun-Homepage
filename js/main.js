@@ -180,14 +180,9 @@ document.addEventListener('touchmove', function (event) { 　　 //监听滚动�
 $(function () { 
   var index = 0;
   var changeImage = function(){
-  var sacle = $(window).width() / $(window).height();
-  var action = 'pc';
-      if(sacle < 1){
-          action = 'mobile';
-      }
   var url = 'https://api.fkun.tech/img/index.php/'+ '&r=' + index;
   backgroundImage.src = url;
-  setTimeout(4000);
+  setTimeout(5000);
   }
   var onImageLoad = function(){
       var oldindex = index -1 < 0 ? 10 : index-1;
@@ -202,7 +197,7 @@ $(function () {
       if(index >10){
           index = 0;
       }
-      setTimeout(changeImage,4000);
+      setTimeout(changeImage,3000);
   }
   
   var backgroundImage = new Image();
