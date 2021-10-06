@@ -182,10 +182,10 @@ $(function () {
   var changeImage = function(){
   var url = 'https://api.fkun.tech/img/index.php/'+ '&r=' + index;
   backgroundImage.src = url;
-  setTimeout(5000);
+  setTimeout(3000);
   }
   var onImageLoad = function(){
-      var oldindex = index -1 < 0 ? 10 : index-1;
+      var oldindex = index -1 < 0 ? 5 : index-1;
       var oldspan = $('.cb-slideshow li span').get(oldindex);
       var newspan = $('.cb-slideshow li span').get(index);
       //设置新背景
@@ -194,10 +194,10 @@ $(function () {
       $(newspan).addClass('active');
       //索引变更
       index++;
-      if(index >10){
+      if(index >5){
           index = 0;
       }
-      setTimeout(changeImage,5000);
+      setTimeout(changeImage,6000);
   }
   
   var backgroundImage = new Image();
