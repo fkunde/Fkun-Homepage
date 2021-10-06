@@ -197,7 +197,7 @@ $(function () {
       if(index >10){
           index = 0;
       }
-      setTimeout(changeImage,3000);
+      setTimeout(changeImage,5000);
   }
   
   var backgroundImage = new Image();
