@@ -37,22 +37,24 @@
             width="150px" height="150px" alt="LOGO" class="panel-cover__logo logo"></a>
         <h1 class="panel-cover__title panel-title"><a href="https://blog.fkun.tech/" title="FkunのBlog">FKUN</a></h1>
         <hr class="panel-cover__divider">
+        <div class="hitokoto-satz">
         <script>
             document.write(fkunhitokoto());
-        </script>
-        <br><br>
-        <p style="font-size:50%"><a lang>source</a>
+        </script>   
+        </div>
+        <div class="hitokoto-author">
+        <p><a lang>source</a>
           <script>document.write(fkunhitokotosource())</script>
         </p>
+      </div>
         <hr class="panel-cover__divider">
         <div class="navigation-wrapper">
           <div>
             <nav class="cover-navigation cover-navigation--primary">
-              <ul class="navigation">
+              <ul class="navigation"  id="navtxt">
                 <li class="navigation__item"><a lang href="https://blog.fkun.tech/" title="Fkun's Blog">Blog</a>
                 </li>
-                <li class="navigation__item">
-                  <a lang href="https://space.bilibili.com/8515147" title="Bilibili @F_KUN">Videos</a>
+                <li class="navigation__item"><a lang href="https://space.bilibili.com/8515147" title="Bilibili @F_KUN">Videos</a>
                 </li>
                 <li class="navigation__item"><a lang href="https://bill.fkun.tech/" title="Ver2.5.1">Book Keeping</a>
                 </li>
@@ -67,7 +69,7 @@
           <div>
             <div>
               <nav class="cover-navigation navigation--social">
-                <ul class="navigation">
+                <ul class="navigation" id="navicon">
                   <!-- Weibo -->
                   <li class="navigation__item">
                     <a href="https://www.weibo.com/u/5221499920" title="微博 @-FKUN-" target="_blank">
