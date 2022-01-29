@@ -63,6 +63,9 @@ $(function () {
     case "zh":
       setLanguage("zh");
       break
+    case "hk":
+        setLanguage("zh");
+      break
     case "jp":
       setLanguage("jp");
       break
@@ -79,6 +82,9 @@ $(function () {
   });
   $("#zhBtn").bind("click", function () {
     setLanguage("zh");
+  });
+  $("#hkBtn").bind("click", function () {
+    setLanguage("hk");
   });
   $("#jpBtn").bind("click", function () {
     setLanguage("jp");
